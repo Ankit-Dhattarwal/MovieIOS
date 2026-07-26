@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct Home: View {
+    var homeImageText = Constants.testTitleUrl
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            AsyncImage(url: URL(string: homeImageText)){
+                image in image.resizable().scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
+            
+            HStack{
+                Button{
+                    
+                }label: {
+                    Text(Constants.playString)
+                        .OutlineButtonStyle()
+                }
+                Button{
+
+                }label: {
+                    Text(Constants.downloadString)
+                        .OutlineButtonStyle()
+                }
+            }
+
+        }
     }
 }
 
